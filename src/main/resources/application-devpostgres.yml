@@ -1,0 +1,20 @@
+spring:
+  thymeleaf:
+    cache: false
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fredbetdb
+    driver-class-name: org.postgresql.Driver
+    username: fred
+    password: fred
+
+logging:
+  pattern:
+    console: "%black(%d{ISO8601}) %highlight(%-5level) %yellow(%C{1.}): %msg%n%throwable"
+  level:
+    root: "WARN"
+    "org.springframework.security.web.csrf": "WARN"
+    "org.springframework.security.web.access": "WARN"
+    "de.fred4jupiter.fredbet": "DEBUG"

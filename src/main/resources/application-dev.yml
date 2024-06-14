@@ -1,0 +1,23 @@
+spring:
+  thymeleaf:
+    cache: false
+  h2:
+    console:
+      # connect in console (http://localhost:8080/console)
+      enabled: true
+      settings:
+        web-allow-others: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:h2:file:~/fredbetdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+logging:
+  pattern:
+    console: "%black(%d{ISO8601}) %highlight(%-5level) %yellow(%C{1.}): %msg%n%throwable"
+  level:
+    root: "WARN"
+    "org.springframework.security.web.csrf": "WARN"
+    "org.springframework.security.web.access": "WARN"
+    "de.fred4jupiter.fredbet": "DEBUG"
